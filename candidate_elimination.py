@@ -8,7 +8,7 @@ G = [('?',)*count_attr]
 print('G[0]=', G)
 print('S[0]=', S)
 
-#domain = [set(data[col]) for col in range(count_attr)]
+domain = [set(data[col]) for col in range(count_attr)]
 
 def consistent(hypothesis, sample):
     for hx, sx in zip(hypothesis, sample):
@@ -23,7 +23,7 @@ def more_general(a, b):
     return True
 
 for row in range(len(data)):
-    domain = [set(data.iloc[:row+1, col]) for col in range(count_attr)]
+    #domain = [set(data.iloc[:row+1, col]) for col in range(count_attr)]
     x, cx = data.iloc[row, :-1], data.iloc[row, -1]
     if cx:
         for i in range(len(x)):
